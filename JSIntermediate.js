@@ -189,15 +189,34 @@
         "James" : 43000
     };
 // a) Write a function sumSalaries(salaries) that calculates and returns the total of all salaries
-function sumSalaries(salaries) 
-// b) Write a function topEarner(salaries) that calculates and returns the name of the person earning the highest salary
-function topEarner(salaries) 
+// function sumSalaries(salaries) {
+//     let totalSalary = 0;
+//     for(let i in salaries){
+//         totalSalary += salaries[i];
+//     }
+//     return totalSalary
+// }
+// console.log(sumSalaries(salaries))
 
-// // 10.The following code uses the Date object to print the current time and the number of hours that have passed today so far. Extend the code to do the following:
-// //     const today = new Date();
-// //     console.log('Current time is ' + today.toLocaleTimeString())
-// //     console.log(today.getHours() + ' hours have passed so far today')
-// // a) Print the total number of minutes that have passed so far today
-// // b) Print the total number of seconds that have passed so far today
-// // c) Calculate and print your age as: 'I am x years, y months and z days old'
-// // d) Write a function daysInBetween(date1, date2) which calculates and returns the amount of days in between the two given dates.
+// b) Write a function topEarner(salaries) that calculates and returns the name of the person earning the highest salary
+function topEarner(salaries) {
+    let maxSalary = 0;
+    let topEarnerName = '';
+    for(let [name, salary] of Object.entries(salaries)){
+        if(salary > maxSalary) {
+            maxSalary = salary;
+            topEarnerName = name;
+        }
+    }
+    return topEarnerName;
+}
+console.log(topEarner(salaries))
+
+// 10.The following code uses the Date object to print the current time and the number of hours that have passed today so far. Extend the code to do the following:
+//     const today = new Date();
+//     console.log('Current time is ' + today.toLocaleTimeString())
+//     console.log(today.getHours() + ' hours have passed so far today')
+// a) Print the total number of minutes that have passed so far today
+// b) Print the total number of seconds that have passed so far today
+// c) Calculate and print your age as: 'I am x years, y months and z days old'
+// d) Write a function daysInBetween(date1, date2) which calculates and returns the amount of days in between the two given dates.
